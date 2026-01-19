@@ -23,7 +23,8 @@
     "meals": [
       "acacia_bladeren",
       "twijgen"
-    ]
+    ],
+    "description": "De giraffen (Giraffa) zijn een geslacht van evenhoevige zoogdieren waarvan de vertegenwoordigers voorkomen in Afrika. Ze zijn bekend om hun lange nek en het vlekkenpatroon op hun vacht. Giraffen zijn de grootste herkauwende zoogdieren op aarde."
   },
   "neushoorn": {
     "id": "neushoorn",
@@ -130,7 +131,7 @@
       "krill"
     ],
     "approved": false,
-    "description": "Walvissen zijn een groep van volledig in het water levende placentale zeezoogdieren. Ze vormen een informele groepering binnen de infraorde walvisachtigen, meestal zonder de dolfijnen en bruinvissen"
+    "description": "De baleinwalvissen (Mysticeti) of baardwalvissen vormen een parvorde van walvissen (Cetacea). De eigenschap die de exemplaren van deze parvorde onderscheidt van de tandwalvissen is dat ze, in plaats van tanden, over baleinplaten in de bovenkaak beschikken, waarmee ze voedseldeeltjes uit het water kunnen filteren."
   },
   "haai": {
     "id": "haai",
@@ -196,7 +197,8 @@
       "plankton",
       "garnaal"
     ],
-    "approved": false
+    "approved": false,
+    "description": "Het Portugees oorlogsschip (Physalia physalis) is een staatkwal die voorkomt in de warmere zeeën. Het is geen echte kwal, maar een complexe kolonie van honderden poliepen."
   },
   "glaucus atlanticus": {
     "id": "glaucus atlanticus",
@@ -209,7 +211,7 @@
       "kwal"
     ],
     "approved": false,
-    "description": "",
+    "description": "Glaucus atlanticus is immuun voor het gif van neteldieren waaronder ook dat van het Portugees oorlogsschip. Ze oogsten de gifhoudende nematocysten van hun prooi en verdelen die als verdedigingsmechanisme over hun cerata (huidplooien). De slak voedt zich niet enkel met neteldieren maar zij eten ook andere zeedieren. De soort doet tevens aan kannibalisme, dus ook soortgenoten worden gegeten.",
     "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Glaucus_atlanticus_1_cropped.jpg/500px-Glaucus_atlanticus_1_cropped.jpg"
   },
   "wolf": {
