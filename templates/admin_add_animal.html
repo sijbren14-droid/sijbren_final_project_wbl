@@ -1,0 +1,41 @@
+<h1>Nieuw dier toevoegen</h1>
+
+<form method="post" class="admin-form">
+
+    <label>
+        ID
+        <input name="id" required>
+    </label>
+
+    <label>
+        Naam
+        <input name="name" required>
+    </label>
+
+    <label>
+        Dieet
+        <select name="diet">
+            <option value="">— Geen —</option>
+            <option value="Carnivoor">Carnivoor</option>
+            <option value="Herbivoor">Herbivoor</option>
+            <option value="Omnivoor">Omnivoor</option>
+            <option value="Fotoautotroof">Fotoautotroof</option>
+            <option value="Chemo-autoroof">Chemo-autoroof</option>
+        </select>
+    </label>
+
+    <fieldset class="checkbox-group">
+        <legend>Gerechten</legend>
+
+        <div class="checkbox-list">
+            {% for meal in all_meals %}
+                <label class="checkbox-item">
+                    <input type="checkbox" name="meals" value="{{ meal.id }}">
+                    {{ meal.name }}
+                </label>
+            {% endfor %}
+        </div>
+    </fieldset>
+
+    <button type="submit">Opslaan</button>
+</form>

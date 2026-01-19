@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Who'll Be Lunch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="top-bar">
+
+    <div class="account-menu">
+        <div class="account-icon">👤</div>
+
+        <div class="account-dropdown">
+            <p class="dropdown-title">Kies een dier</p>
+
+            <input
+                type="text"
+                id="animal-search"
+                placeholder="Zoek dier..."
+                onkeyup="filterAnimals()"
+            >
+
+            <div class="animal-list" id="animal-list">
+                {% for a in all_animals %}
+                    <a
+                        href="/menu?animal_id={{ a.id }}"
+                        class="animal-item"
+                        data-id="{{ a.id }}"
+                    >
+                        {{ a.name }}
+                    </a>
+                {% endfor %}
+            </div>
+
+            <p id="no-results" class="no-results hidden">
+                Geen resultaten
+            </p>
+
+            <hr>
+
+            <a href="/menu" class="random-animal">
+                Random dier
+            </a>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1>Who’ll Be Lunch</h1>
+
+        {% if animal %}
+            <p>{{ animal.name }}{% if animal.diet %} · {{ animal.diet }}{% endif %}</p>
+        {% endif %}
+    </div>
+
+</header>
+
+<main class="shop">
+
+    {% if animal and animal.meals_full %}
+        {% for meal in animal.meals_full %}
+            <div class="card">
+                <a href="{{ url_for('meal_detail', meal_id=meal.id) }}">
+                    <div class="meal-image">
+                        <img
+                            src="{{ meal.image_url }}"
+                            alt="{{ meal.name }}"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <h3>{{ meal.name }}</h3>
+
+                    {% if meal.type %}
+                        <p class="type {{ meal.type | lower }}">
+                            {{ meal.type }}
+                        </p>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty">Dit dier heeft nog geen gerechten.</p>
+    {% endif %}
+
+</main>
+
+<div id="chat-bubble">＋</div>
+
+<div id="chat-window" class="hidden">
+
+    <div class="chat-header">
+        <span>Nieuw dier inzenden</span>
+        <button id="close-chat">×</button>
+    </div>
+
+    <form method="POST" action="/submit-animal" class="chat-form">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Naam van het dier"
+            maxlength="40"
+            pattern="[A-Za-zÀ-ÿ\s\-]+"
+            title="Alleen letters en spaties toegestaan (max 40 tekens)"
+        >
+
+        <textarea
+            name="description"
+            placeholder="Beschrijving van het dier (max 300 tekens)"
+            rows="3"
+            maxlength="300"
+        ></textarea>
+
+        <label>Dieet</label>
+        <select name="diet">
+            <option value="">— Geen dieet —</option>
+            <option value="Herbivoor">Herbivoor</option>
+            <option value="Carnivoor">Carnivoor</option>
+            <option value="Omnivoor">Omnivoor</option>
+            <option value="Fotoautotroof">Fotoautotroof</option>
+            <option value="Chemo-autoroof">Chemo-autoroof</option>
+        </select>
+
+        <fieldset class="checkbox-group">
+            <legend>Gerechten (max 4)</legend>
+
+            <div class="checkbox-list">
+                {% for meal in all_meals %}
+                    <label class="checkbox-item">
+                        <input
+                            type="checkbox"
+                            name="meals"
+                            value="{{ meal.id }}"
+                            {% if meal.id in animal.meals %}checked{% endif %}
+                        >
+                        {{ meal.name }}
+                    </label>
+                {% endfor %}
+            </div>
+        </fieldset>
+
+        
+        <hr>
+
+        <p><strong>Nieuw gerecht</strong></p>
+
+        <input
+            type="text"
+            name="new_meal_name"
+            placeholder="Naam van het gerecht"
+            maxlength="40"
+            pattern="[A-Za-zÀ-ÿ\s\-]+"
+            title="Alleen letters en spaties toegestaan (max 40 tekens)"
+        >
+
+        <select name="new_meal_type">
+            <option value="">— Kies type —</option>
+            <option value="vlees">Vlees</option>
+            <option value="plantaardig">Plantaardig</option>
+            <option value="Chemisch">Chemisch</option>
+            <option value="Gemixt">Gemixt</option>
+            <option value="symbiotisch">Symbiotisch</option>
+        </select>
+
+        <textarea
+            name="new_meal_description"
+            placeholder="Beschrijving van het gerecht (max 300 tekens)"
+            rows="3"
+            maxlength="300"
+        ></textarea>
+
+        <button type="submit">Verstuur</button>
+        <a href="/admin" class="admin-btn">Admin page</a>
+    </form>
+</div>
+
+<div class="animal-info-card">
+    <div class="animal-image">
+        <img src="{{ animal.image_url }}" alt="{{ animal.name }}">
+    </div>
+
+    <h3>{{ animal.name }}</h3>
+
+    {% if animal.diet %}
+        <p class="diet">{{ animal.diet }}</p>
+    {% endif %}
+
+    <p class="description">
+        {{ animal.description or "Geen beschrijving beschikbaar." }}
+    </p>
+
+    <a href="/food-web/{{ animal.id }}" class="foodweb-button">
+         Bekijk food web
+    </a>
+</div>
+
+
+<script>
+    const bubble = document.getElementById("chat-bubble");
+    const windowChat = document.getElementById("chat-window");
+    const closeChat = document.getElementById("close-chat");
+
+    bubble.onclick = () => windowChat.classList.toggle("hidden");
+    closeChat.onclick = () => windowChat.classList.add("hidden");
+</script>
+
+<script>
+let currentIndex = -1;
+
+const list = document.getElementById("animal-list");
+const items = Array.from(document.querySelectorAll(".animal-item"));
+const noResults = document.getElementById("no-results");
+const searchInput = document.getElementById("animal-search");
+
+/* ---------- SORT A–Z ---------- */
+items.sort((a, b) =>
+    a.textContent.localeCompare(b.textContent, "nl")
+);
+items.forEach(i => list.appendChild(i));
+
+/* ---------- FAVORIETEN ---------- */
+const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+items.forEach(item => {
+    const star = document.createElement("span");
+    star.textContent = "★";
+    star.className = "star";
+    item.appendChild(star);
+
+    const id = item.dataset.id;
+
+    if (favorites.includes(id)) {
+        item.classList.add("fav");
+    }
+
+    star.onclick = e => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (favorites.includes(id)) {
+            favorites.splice(favorites.indexOf(id), 1);
+            item.classList.remove("fav");
+        } else {
+            favorites.push(id);
+            item.classList.add("fav");
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    };
+});
+
+/* ---------- SEARCH + HIGHLIGHT ---------- */
+function filterAnimals() {
+    const filter = searchInput.value.toLowerCase();
+    let visible = 0;
+    currentIndex = -1;
+
+    items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const nameSpan = item.childNodes[0];
+
+        if (text.includes(filter)) {
+            item.style.display = "flex";
+            visible++;
+
+            // highlight
+            if (filter) {
+                const regex = new RegExp(`(${filter})`, "gi");
+                nameSpan.innerHTML = nameSpan.textContent.replace(
+                    regex,
+                    '<span class="highlight">$1</span>'
+                );
+            } else {
+                nameSpan.textContent = nameSpan.textContent;
+            }
+
+        } else {
+            item.style.display = "none";
+        }
+
+        item.classList.remove("active");
+    });
+
+    noResults.classList.toggle("hidden", visible !== 0);
+}
+
+/* ---------- KEYBOARD NAV ---------- */
+searchInput.addEventListener("keydown", e => {
+    const visibleItems = items.filter(
+        i => i.style.display !== "none"
+    );
+
+    if (e.key === "ArrowDown") {
+        currentIndex = Math.min(currentIndex + 1, visibleItems.length - 1);
+    }
+
+    if (e.key === "ArrowUp") {
+        currentIndex = Math.max(currentIndex - 1, 0);
+    }
+
+    if (e.key === "Enter" && currentIndex >= 0) {
+        visibleItems[currentIndex].click();
+    }
+
+    visibleItems.forEach(i => i.classList.remove("active"));
+    if (visibleItems[currentIndex]) {
+        visibleItems[currentIndex].classList.add("active");
+        visibleItems[currentIndex].scrollIntoView({ block: "nearest" });
+    }
+});
+
+/* ---------- LAATST GEKOZEN DIER ---------- */
+items.forEach(item => {
+    item.addEventListener("click", () => {
+        localStorage.setItem("lastAnimal", item.dataset.id);
+    });
+});
+
+const lastAnimal = localStorage.getItem("lastAnimal");
+if (lastAnimal) {
+    const last = items.find(i => i.dataset.id === lastAnimal);
+    if (last) last.classList.add("active");
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const checkboxes = document.querySelectorAll('input[name="meals"]');
+    const MAX_MEALS = 4;
+
+    function updateMealLimit() {
+        const checked = document.querySelectorAll('input[name="meals"]:checked').length;
+
+        checkboxes.forEach(cb => {
+            if (!cb.checked) {
+                cb.disabled = checked >= MAX_MEALS;
+            }
+        });
+    }
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", updateMealLimit);
+    });
+});
+</script>
+
+</body>
+</html>

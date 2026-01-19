@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Bewerk dier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Admin Panel</h1>
+</header>
+
+<main class="admin">
+    <section class="admin-edit">
+
+        <h2>Bewerk dier: {{ animal.name }}</h2>
+
+        <form method="post" enctype="multipart/form-data" class="admin-form">
+
+            <label>
+                Naam
+                <input type="text" name="name" value="{{ animal.name }}" required>
+            </label>
+
+            <label>
+                Dieet
+                <select name="diet">
+                    <option value="">— Geen dieet —</option>
+                    <option value="Carnivoor" {{ "selected" if animal.diet == "Carnivoor" }}>Carnivoor</option>
+                    <option value="Herbivoor" {{ "selected" if animal.diet == "Herbivoor" }}>Herbivoor</option>
+                    <option value="Omnivoor" {{ "selected" if animal.diet == "Omnivoor" }}>Omnivoor</option>
+                    <option value="Fotoautotroof" {{ "selected" if animal.diet == "Fotoautotroof" }}>Fotoautotroof</option>
+                    <option value="Chemoautotroof" {{ "selected" if animal.diet == "Chemoautotroof" }}>Chemoautotroof</option>
+                </select>
+            </label>
+
+            <label>
+                Beschrijving
+                <textarea name="description" rows="4">{{ animal.description }}</textarea>
+            </label>
+
+            <label>
+                Wikipedia titel
+                <input name="wiki" value="{{ animal.wiki }}">
+            </label>
+
+            <fieldset class="checkbox-group">
+                <legend>Gerechten</legend>
+
+                <div class="checkbox-list">
+                    {% for meal in all_meals %}
+                        <label class="checkbox-item">
+                            <input
+                                type="checkbox"
+                                name="meals"
+                                value="{{ meal.id }}"
+                                {% if meal.id in animal.meals %}checked{% endif %}
+                            >
+                            {{ meal.name }}
+                        </label>
+                    {% endfor %}
+                </div>
+            </fieldset>
+
+            <div class="image-preview">
+                <p><strong>Huidige afbeelding</strong></p>
+                <img id="preview" src="{{ animal.image_url }}" alt="Preview">
+            </div>
+
+            <label>
+                Nieuwe afbeelding uploaden
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    onchange="previewImage(event)"
+                >
+            </label>
+
+            {% if animal.image %}
+                <label>
+                    <input type="checkbox" name="remove_image" value="1">
+                    Verwijder huidige afbeelding
+                </label>
+            {% endif %}
+
+            <div class="form-actions">
+                <button type="submit" class="approve">Opslaan</button>
+                <a href="/admin" class="cancel">Annuleren</a>
+            </div>
+
+        </form>
+
+    </section>
+</main>
+
+<script>
+function previewImage(event) {
+    const img = document.getElementById("preview");
+    img.src = URL.createObjectURL(event.target.files[0]);
+}
+</script>
+
+</body>
+</html>

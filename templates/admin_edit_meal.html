@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meal bewerken</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Gerecht bewerken</h1>
+</header>
+
+<main class="admin-edit">
+    <form method="post" enctype="multipart/form-data" class="edit-form">
+
+        <label>
+            Naam
+            <input type="text" name="name" value="{{ meal.name }}" required>
+        </label>
+
+        <label>
+            Wikipedia titel
+            <input name="wiki" value="{{ meal.wiki }}">
+            <small>Exacte Wikipedia paginatitel (voor placeholder image)</small>
+        </label>
+
+        <label>
+            Type
+            <select name="type" required>
+                <option value="">— Kies type —</option>
+                <option value="vlees" {{ "selected" if meal.type == "vlees" }}>Vlees</option>
+                <option value="plantaardig" {{ "selected" if meal.type == "plantaardig" }}>Plantaardig</option>
+                <option value="chemisch" {{ "selected" if meal.type == "chemisch" }}>Chemisch</option>
+                <option value="gemixt" {{ "selected" if meal.type == "gemixt" }}>Gemixt</option>
+            </select>
+        </label>
+
+        <label>
+            Beschrijving
+            <textarea name="description" rows="4">{{ meal.description }}</textarea>
+        </label>
+
+        <div class="image-preview">
+            <p><strong>Huidige afbeelding</strong></p>
+            <img id="preview" src="{{ meal.image_url }}" alt="Preview">
+        </div>
+
+        <label>
+            Nieuwe afbeelding uploaden
+            <input type="file" name="image" accept="image/*" onchange="previewImage(event)">
+        </label>
+
+        {% if meal.image %}
+        <label>
+            <input type="checkbox" name="remove_image" value="1">
+            Verwijder huidige afbeelding
+        </label>
+        {% endif %}
+
+        <div class="form-actions">
+            <button class="approve" type="submit">Opslaan</button>
+            <a class="cancel" href="/admin">Annuleren</a>
+        </div>
+    </form>
+</main>
+
+<script>
+function previewImage(event) {
+    const img = document.getElementById("preview");
+    img.src = URL.createObjectURL(event.target.files[0]);
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ meal.name }} | Who'll Be Lunch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Who'll Be Lunch</h1>
+        <a class="back-link" href="/menu">← Terug naar overzicht</a>
+    </header>
+
+    <main class="meal-detail">
+        <div class="meal-card">
+            <div class="meal-image">
+                <img src="{{ meal.image_url }}" alt="{{ meal.name }}">
+            </div>
+
+            <div class="meal-info">
+                <h2>{{ meal.name }}</h2>
+
+                <span class="type {{ meal.type | lower }}">
+                    {{ meal.type }}
+                </span>
+
+                <p class="description">
+                    {{ meal.description }}
+                </p>
+            </div>
+        </div>
+    </main>
+
+<script>
+let currentIndex = -1;
+
+const list = document.getElementById("animal-list");
+const items = Array.from(document.querySelectorAll(".animal-item"));
+const noResults = document.getElementById("no-results");
+const searchInput = document.getElementById("animal-search");
+
+/* ---------- SORT A–Z ---------- */
+items.sort((a, b) =>
+    a.textContent.localeCompare(b.textContent, "nl")
+);
+items.forEach(i => list.appendChild(i));
+
+/* ---------- FAVORIETEN ---------- */
+const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+items.forEach(item => {
+    const star = document.createElement("span");
+    star.textContent = "★";
+    star.className = "star";
+    item.appendChild(star);
+
+    const id = item.dataset.id;
+
+    if (favorites.includes(id)) {
+        item.classList.add("fav");
+    }
+
+    star.onclick = e => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (favorites.includes(id)) {
+            favorites.splice(favorites.indexOf(id), 1);
+            item.classList.remove("fav");
+        } else {
+            favorites.push(id);
+            item.classList.add("fav");
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    };
+});
+
+/* ---------- SEARCH + HIGHLIGHT ---------- */
+function filterAnimals() {
+    const filter = searchInput.value.toLowerCase();
+    let visible = 0;
+    currentIndex = -1;
+
+    items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const nameSpan = item.childNodes[0];
+
+        if (text.includes(filter)) {
+            item.style.display = "flex";
+            visible++;
+
+            // highlight
+            if (filter) {
+                const regex = new RegExp(`(${filter})`, "gi");
+                nameSpan.innerHTML = nameSpan.textContent.replace(
+                    regex,
+                    '<span class="highlight">$1</span>'
+                );
+            } else {
+                nameSpan.textContent = nameSpan.textContent;
+            }
+
+        } else {
+            item.style.display = "none";
+        }
+
+        item.classList.remove("active");
+    });
+
+    noResults.classList.toggle("hidden", visible !== 0);
+}
+
+/* ---------- KEYBOARD NAV ---------- */
+searchInput.addEventListener("keydown", e => {
+    const visibleItems = items.filter(
+        i => i.style.display !== "none"
+    );
+
+    if (e.key === "ArrowDown") {
+        currentIndex = Math.min(currentIndex + 1, visibleItems.length - 1);
+    }
+
+    if (e.key === "ArrowUp") {
+        currentIndex = Math.max(currentIndex - 1, 0);
+    }
+
+    if (e.key === "Enter" && currentIndex >= 0) {
+        visibleItems[currentIndex].click();
+    }
+
+    visibleItems.forEach(i => i.classList.remove("active"));
+    if (visibleItems[currentIndex]) {
+        visibleItems[currentIndex].classList.add("active");
+        visibleItems[currentIndex].scrollIntoView({ block: "nearest" });
+    }
+});
+
+/* ---------- LAATST GEKOZEN DIER ---------- */
+items.forEach(item => {
+    item.addEventListener("click", () => {
+        localStorage.setItem("lastAnimal", item.dataset.id);
+    });
+});
+
+const lastAnimal = localStorage.getItem("lastAnimal");
+if (lastAnimal) {
+    const last = items.find(i => i.dataset.id === lastAnimal);
+    if (last) last.classList.add("active");
+}
+
+</script>
+
+</body>
+</html>

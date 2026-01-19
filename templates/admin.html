@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Admin Panel</h1>
+    <div class="admin-actions">
+        <a href="/admin/animals/new" class="admin-btn">Nieuw dier</a>
+        <a href="/admin/meals/new" class="admin-btn">Nieuw gerecht</a>
+        <br>
+
+        <br>
+        <a href="/menu" class="admin-btn">Menu page</a>
+    </div>
+    
+</header>
+
+<main class="admin-grid">
+
+    <section>
+        <h2>Pending dieren</h2>
+
+        <div  class="admin-column">
+            {% for animal in pending_animals.values() %}
+                <div class="admin-card pending">
+                    <h3>{{ animal.name }}</h3>
+
+                    {% if animal.diet %}
+                        <p>{{ animal.diet }}</p>
+                    {% endif %}
+
+                    <p>{{ animal.meals | join(", ") }}</p>
+
+                    <div class="actions">
+                        <a class="approve" href="/approve-animal/{{ animal.id }}">✔</a>
+                        <a class="reject" href="/reject-animal/{{ animal.id }}">✖</a>
+                    </div>
+                </div>
+            {% else %}
+                <p class="empty">Geen pending dieren</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Pending Gerechten</h2>
+
+        <div  class="admin-column">
+            {% for meal in pending_meals.values() %}
+                <div class="admin-card pending">
+                    <h3>{{ meal.name }}</h3>
+                    <span class="type {{ meal.type }}">{{ meal.type }}</span>
+                    <p>{{ meal.description }}</p>
+
+                    <div class="actions">
+                        <a class="approve" href="/approve-meal/{{ meal.id }}">✔</a>
+                        <a class="reject" href="/reject-meal/{{ meal.id }}">✖</a>
+                    </div>
+                </div>
+            {% else %}
+                <p class="empty">Geen pending gerechten</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Bestaande Dieren</h2>
+
+        <input
+            type="text"
+            class="admin-search"
+            placeholder="Zoek dier..."
+            onkeyup="filterAdmin(this, 'animal-card')"
+        >
+
+        <p class="no-results hidden">Geen resultaten</p>
+
+        <div class="admin-column">
+            {% for animal in animals.values() %}
+                <div class="admin-card animal-card">
+                    <h3>{{ animal.name }}</h3>
+                    <p>{{ animal.diet }}</p>
+
+                    <div class="actions">
+                        <a class="edit" href="/admin/animals/{{ animal.id }}/edit">
+                            Bewerken
+                        </a>
+                        <a href="#"
+                        class="delete-btn"
+                        data-delete-url="/reject-animal_e/{{ animal.id }}">
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Bestaande Gerechten</h2>
+
+        <input
+            type="text"
+            class="admin-search"
+            placeholder="Zoek gerecht..."
+            onkeyup="filterAdmin(this, 'meal-card')"
+        >
+
+        <p class="no-results hidden">Geen resultaten</p>
+
+        <div class="admin-column">
+            {% for meal in meals.values() %}
+                <div class="admin-card meal-card">
+                    <h3>{{ meal.name }}</h3>
+                    <span class="type {{ meal.type }}">{{ meal.type }}</span>
+
+                    <div class="actions">
+                        <a class="edit" href="/admin/meals/{{ meal.id }}/edit">
+                            Bewerken
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</main>
+
+<div id="confirm-modal" class="modal hidden">
+    <div class="modal-box">
+        <h3>Are you sure?</h3>
+        <p>This action cannot be undone.</p>
+
+        <div class="modal-actions">
+            <button id="confirm-delete" class="danger">
+                Delete
+            </button>
+            <button id="cancel-delete">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+function filterAdmin(input, cardClass) {
+    const filter = input.value.toLowerCase();
+    const section = input.closest("section");
+    const cards = section.querySelectorAll("." + cardClass);
+    const noResults = section.querySelector(".no-results");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(filter)) {
+            card.style.display = "block";
+            visible++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    if (visible === 0) {
+        noResults.classList.remove("hidden");
+    } else {
+        noResults.classList.add("hidden");
+    }
+}
+</script>
+
+<script>
+let deleteUrl = null;
+
+document.querySelectorAll(".delete-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+        e.preventDefault();
+        deleteUrl = btn.dataset.deleteUrl;
+        document.getElementById("confirm-modal").classList.remove("hidden");
+    });
+});
+
+document.getElementById("cancel-delete").addEventListener("click", () => {
+    deleteUrl = null;
+    document.getElementById("confirm-modal").classList.add("hidden");
+});
+
+document.getElementById("confirm-delete").addEventListener("click", () => {
+    if (deleteUrl) {
+        window.location.href = deleteUrl;
+    }
+});
+</script>
+
+
+
+</body>
+</html>

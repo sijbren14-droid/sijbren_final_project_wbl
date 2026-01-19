@@ -1,0 +1,1034 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #461007;
+}
+
+/* HEADER */
+header {
+    background-color: #ffcf87;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #fcb96d;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title{
+    padding: 20px;
+}
+
+/* SHOP GRID */
+.shop {
+    max-width: 1100px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* CARD */
+.card {
+    background-color: #ffcf87;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(16, 29, 11, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* LINK RESET */
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 1rem;
+}
+
+/* IMAGE PLACEHOLDER */
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* TEXT */
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.card .type {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* TYPE LABELS */
+.type {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* VLEES */
+.type.vlees {
+    background-color: #ffe5e5;
+    color: #b30000;
+}
+
+.type.gemixt {
+    background-color: #f7fdbe;
+    color: #ccb800;
+}
+
+.type.chemisch {
+    background-color: #ffd6fa;
+    color: #cc00aa;
+}
+
+.type.symbiotisch {
+    background: #ff6054;
+    background: linear-gradient(90deg,rgba(255, 96, 84, 1) 0%, rgba(255, 247, 232, 1) 46%);
+    color: #a10404;
+}
+
+/* PLANTAARDIG */
+.type.plantaardig {
+    background-color: #e6f6e6;
+    color: #1f7a1f;
+}
+
+/* MEAL DETAIL PAGE */
+.meal-detail {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.meal-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.meal-image {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.meal-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: inside;
+    display: block;
+}
+
+/* INFO */
+.meal-info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.meal-info .description {
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* BACK LINK */
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .meal-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CHAT BUBBLE */
+#chat-bubble {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* CHAT WINDOW */
+#chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.chat-header {
+    background: #333;
+    color: white;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.chat-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.6rem;
+}
+
+.chat-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-form button {
+    padding: 0.6rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ADMIN PANEL */
+.admin {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.admin section {
+    margin-bottom: 4rem;
+}
+
+.admin h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* ADMIN CARD */
+.admin-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.admin-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* ACTIONS */
+.actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.actions a {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* APPROVE / REJECT */
+.actions .approve {
+    background-color: #e6f6e6;
+    color: #1f7a1f;
+}
+
+.actions .reject {
+    background-color: #ffe5e5;
+    color: #b30000;
+}
+
+/* EMPTY STATE */
+.empty {
+    color: #777;
+    font-style: italic;
+}
+
+/* selectie form */
+
+.meals-section {
+    margin: 12px 0;
+}
+
+.meals-list {
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 8px;
+    background: #fafafa;
+    overscroll-behavior: contain;
+}
+
+.meal-item {
+    display: block;
+    cursor: pointer;
+    padding: 6px 4px;
+    font-size: 14px;
+}
+
+.meal-item input {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.meal-item + .meal-item {
+    border-top: px solid #eee;
+}
+
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 20px;
+}
+
+.admin-card.pending {
+    border-left: 4px solid orange;
+}
+
+@media (max-width: 800px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.account-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.account-icon {
+    font-size: 28px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+.account-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    width: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.account-dropdown a {
+    display: block;
+    padding: 6px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.account-dropdown a:hover {
+    background: #f0f0f0;
+}
+
+.dropdown-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* hover open */
+.account-menu:hover .account-dropdown {
+    display: block;
+}
+
+.admin-edit {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.image-preview img {
+    width: 200px;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-actions .cancel {
+    text-decoration: none;
+    padding: 8px 12px;
+    background: #ccc;
+    border-radius: 6px;
+    color: #000;
+}
+
+.checkbox-group {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.checkbox-group legend {
+    font-weight: bold;
+    padding: 0 6px;
+}
+
+.checkbox-list {
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.checkbox-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.admin-column {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+
+    max-height: 300px;
+    overflow-y: auto;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.admin-edit {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edit-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.image-preview img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.actions .approve {
+    background: #4caf50;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.actions .cancel {
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    background: #ccc;
+    color: black;
+}
+
+.type.vlees {
+    color: darkred;
+    font-weight: bold;
+}
+
+.type.plantaardig {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.image-preview img {
+    max-width: 220px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.admin-btn {
+    padding: 8px 14px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ACCOUNT DROPDOWN */
+.account-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.account-menu:hover .account-dropdown {
+    display: block;
+}
+
+/* SEARCH */
+#animal-search {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* SCROLLABLE LIST */
+.animal-list {
+    max-height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ITEMS */
+.animal-item {
+    padding: 6px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.animal-item:hover {
+    background: #f0f0f0;
+}
+
+/* RANDOM */
+.random-animal {
+    display: block;
+    padding: 6px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+/* NO RESULTS */
+.no-results {
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    margin: 6px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.animal-item {
+    padding: 6px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animal-item.active {
+    background: #ffe5b4;
+}
+
+.animal-item .star {
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.4;
+}
+
+.animal-item.fav .star {
+    opacity: 1;
+    color: gold;
+}
+
+/* Highlight search */
+.highlight {
+    background: yellow;
+    font-weight: bold;
+}
+
+/* LANDING PAGE */
+body.landing {
+    min-height: 100vh;
+    background: #ffcf87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-container {
+    text-align: center;
+}
+
+.landing-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #461007;
+}
+
+.landing-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #5a1a0d;
+}
+
+.landing-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #461007;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* MODAL OVERLAY */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+/* MODAL BOX */
+.modal-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.modal-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.modal-box p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* MODAL ACTIONS */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-actions button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.modal-actions .danger {
+    background: #b30000;
+    color: white;
+}
+
+.modal-actions #cancel-delete {
+    background: #ccc;
+}
+
+
+/* =========================
+   ANIMAL INFO CARD
+   ========================= */
+
+.animal-info-card {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 260px;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 900;
+    border: #ffcf87;
+    border-width: 5px;
+}
+
+.animal-info-card h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.animal-info-card .diet {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: #777;
+}
+
+.animal-info-card .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.animal-info-card .empty {
+    font-style: italic;
+    color: #999;
+}
+
+.animal-image {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.6rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.animal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foodweb-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.foodweb-button:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+/* ================= FOOD WEB ================= */
+
+.food-web-canvas {
+    position: relative;
+    width: 3000px;            /* groot veld */
+    height: 2000px;
+    background: #fafafa;
+    overflow: hidden;         /* belangrijk voor drag */
+    cursor: grab;
+    background-image: url("/static/images/layout/honegomb_grid.png");
+    background-repeat: repeat;
+    background-size: 20%;
+    background-color: #ffffff;
+}
+
+.food-web-canvas:active {
+    cursor: grabbing;
+}
+
+/* ---------- NODE ---------- */
+.food-node {
+    position: absolute;
+    width: 180px;
+    padding: 12px;
+    background: #ffcf87;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* ---------- HOVER EFFECT ---------- */
+.food-node:hover {
+    background: #ffdca8;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transform: scale(10%);
+    z-index: 5;
+}
+
+/* subtiele outline */
+.food-node:hover::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 170, 0, 0.6);
+    pointer-events: none;
+}
+
+/* ---------- IMAGE ---------- */
+.food-image {
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ddd;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- NAME ---------- */
+.food-name {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #3a2a00;
+}
+
+/* ---------- DEPTH SCALING ---------- */
+.depth-0 {
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 4;
+}
+
+.depth-1 {
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 3;
+}
+
+.depth-2 {
+    transform: translate(-50%, -50%) scale(0.85);
+    z-index: 2;
+}
+
+/* hover + depth combineren */
+.depth-0:hover,
+.depth-1:hover,
+.depth-2:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ---------- SVG CONNECTIONS ---------- */
+#connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* lijnen nooit klikken */
+    z-index: 1;
+}
+
+#connections line,
+#connections path {
+    stroke: #5a1a0d;
+    stroke-width: 3;
+    fill: none;
+    marker-end: url(#arrow);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+}
+
+/* ---------- PAN READY (voor JS) ---------- */
+.food-web-inner {
+    position: absolute;
+    inset: 0;
+    transform-origin: 0 0;
+}
+
+.food-web-stage {
+    position: relative;
+    width: 3000px;
+    height: 3000px;
+    transform-origin: 0 0;
+    transition: transform 0.15s ease;
+}
+
+/* Zoom buttons */
+.zoom-controls {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+.zoom-controls button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #222;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.zoom-controls button:hover {
+    background: #444;
+}
+
+.back-to-menu {
+    display: inline-block;
+    margin: 12px 0 16px 0;
+    font-weight: bold;
+    color: #333;
+    background: #ffcf87;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 20px;
+    transition: background 0.2s ease;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.back-to-menu:hover {
+    background: #f0f0f0;
+}
+

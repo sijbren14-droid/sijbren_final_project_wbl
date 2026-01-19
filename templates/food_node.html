@@ -1,0 +1,18 @@
+<div
+    class="food-node"
+     data-id="{{ node.id }}"
+     style="left: {{ node.x }}px; top: {{ node.y }}px""
+>
+    <div class="food-image">
+        <img src="{{ node.image }}" alt="{{ node.name }}">
+    </div>
+
+    <div class="food-name">
+        {{ node.name }}
+    </div>
+</div>
+
+{% for child in node.children %}
+    {% set node = child %}
+    {% include "food_node.html" %}
+{% endfor %}

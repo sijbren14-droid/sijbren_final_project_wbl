@@ -1,0 +1,600 @@
+{
+  "lion": {
+    "id": "lion",
+    "name": "Leeuw",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "Lion",
+    "description": "De leeuw is een groot roofdier dat in groepen leeft en jaagt op grote hoefdieren.",
+    "meals": [
+      "zebra",
+      "antilope",
+      "gnoes",
+      "wratten zwijn",
+      "buffel"
+    ]
+  },
+  "giraffe": {
+    "id": "giraffe",
+    "name": "Giraffe",
+    "diet": "Herbivoor",
+    "image": null,
+    "wiki": "giraffe",
+    "meals": [
+      "acacia_bladeren",
+      "twijgen"
+    ]
+  },
+  "neushoorn": {
+    "id": "neushoorn",
+    "name": "Neushoorn",
+    "diet": "Herbivoor",
+    "image": null,
+    "wiki": "black rhinoceros",
+    "meals": [
+      "gras",
+      "bladeren"
+    ]
+  },
+  "paard": {
+    "id": "paard",
+    "name": "Paard",
+    "diet": "Herbivoor",
+    "image": null,
+    "wiki": "horse",
+    "meals": [
+      "hooi",
+      "gras"
+    ]
+  },
+  "koe": {
+    "id": "koe",
+    "name": "Koe",
+    "diet": "Herbivoor",
+    "image": null,
+    "wiki": "Bretonne Pie Noir",
+    "meals": [
+      "hooi",
+      "gras"
+    ]
+  },
+  "pig": {
+    "id": "pig",
+    "name": "Varken",
+    "diet": "Omnivoor",
+    "image": null,
+    "wiki": "pig",
+    "meals": [
+      "groenten",
+      "fruit"
+    ]
+  },
+  "beer": {
+    "id": "beer",
+    "name": "Beer",
+    "diet": "Omnivoor",
+    "image": null,
+    "wiki": "bear",
+    "meals": [
+      "vis",
+      "bessen",
+      "honing",
+      "zalm"
+    ]
+  },
+  "bij": {
+    "id": "bij",
+    "name": "Bij",
+    "diet": "Omnivoor",
+    "image": null,
+    "wiki": "bee",
+    "meals": [
+      "nectar",
+      "pollen"
+    ]
+  },
+  "panda": {
+    "id": "panda",
+    "name": "panda",
+    "diet": "gespecialiseerde herbivoor",
+    "image": null,
+    "wiki": "giant panda",
+    "meals": [
+      "Bamboo"
+    ],
+    "approved": false
+  },
+  "krokodil": {
+    "id": "krokodil",
+    "name": "krokodil",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "crocodile",
+    "meals": [
+      "zebra",
+      "antilope",
+      "gnoes"
+    ],
+    "approved": false
+  },
+  "walvis": {
+    "id": "walvis",
+    "name": "walvis",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "whale",
+    "meals": [
+      "vis",
+      "plankton",
+      "garnaal",
+      "krill"
+    ],
+    "approved": false,
+    "description": "Walvissen zijn een groep van volledig in het water levende placentale zeezoogdieren. Ze vormen een informele groepering binnen de infraorde walvisachtigen, meestal zonder de dolfijnen en bruinvissen"
+  },
+  "haai": {
+    "id": "haai",
+    "name": "haai",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "Carcharhiniformes",
+    "meals": [
+      "vis",
+      "inktvis"
+    ],
+    "approved": false,
+    "description": "Haaien zijn een groep van grote, lenige kraakbeenvissen. De oudste bekende fossielen van haaien dateren van meer dan 425 tot 455 miljoen jaar geleden"
+  },
+  "mieren eter": {
+    "id": "mieren eter",
+    "name": "mieren eter",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "anteater",
+    "meals": [
+      "mieren",
+      "termieten"
+    ],
+    "approved": false
+  },
+  "tijger": {
+    "id": "tijger",
+    "name": "tijger",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "tiger",
+    "meals": [
+      "wild zwijn",
+      "muntjak",
+      "makaken",
+      "gaur"
+    ],
+    "approved": false,
+    "description": ""
+  },
+  "spin": {
+    "id": "spin",
+    "name": "spin",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "Latrodectus",
+    "meals": [
+      "vlieg",
+      "sprinkhaan"
+    ],
+    "approved": false,
+    "description": ""
+  },
+  "portugees oorlogsschip": {
+    "id": "portugees oorlogsschip",
+    "name": "portugees oorlogsschip",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "Portuguese man o' war",
+    "meals": [
+      "vis",
+      "plankton",
+      "garnaal"
+    ],
+    "approved": false
+  },
+  "glaucus atlanticus": {
+    "id": "glaucus atlanticus",
+    "name": "Blauwe Draak (Glaucus atlanticus)",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "glaucus atlanticus",
+    "meals": [
+      "portugees oorlogsschip",
+      "kwal"
+    ],
+    "approved": false,
+    "description": "",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Glaucus_atlanticus_1_cropped.jpg/500px-Glaucus_atlanticus_1_cropped.jpg"
+  },
+  "wolf": {
+    "id": "wolf",
+    "name": "wolf",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "wolf",
+    "meals": [
+      "wild zwijn",
+      "hert",
+      "schaap"
+    ],
+    "approved": false
+  },
+  "slang": {
+    "id": "slang",
+    "name": "slang",
+    "diet": "Carnivoor",
+    "image": null,
+    "wiki": "snake",
+    "meals": [
+      "muis",
+      "kikker"
+    ],
+    "approved": false
+  },
+  "stekelvarken": {
+    "id": "stekelvarken",
+    "name": "stekelvarken",
+    "diet": "Omnivoor",
+    "image": null,
+    "wiki": "hedgehog",
+    "meals": [
+      "kastanje",
+      "wortelen",
+      "sprinkhaan"
+    ],
+    "approved": false
+  },
+  "hert": {
+    "id": "hert",
+    "name": "hert",
+    "diet": "Herbivoor",
+    "description": "hert",
+    "meals": [
+      "gras",
+      "fruit",
+      "bessen",
+      "boomschors"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Red deer",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cervus_elaphus_Luc_Viatour_6.jpg/500px-Cervus_elaphus_Luc_Viatour_6.jpg"
+  },
+  "hond": {
+    "id": "hond",
+    "name": "hond",
+    "diet": "Carnivoor",
+    "description": "hond is een een huisdier die achter een sok aan rend",
+    "meals": [
+      "brokjes"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "dog",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Huskiesatrest.jpg/500px-Huskiesatrest.jpg"
+  },
+  "meeuw": {
+    "id": "meeuw",
+    "name": "meeuw",
+    "diet": "Omnivoor",
+    "description": "irritant beest",
+    "meals": [
+      "garnaal",
+      "kwal"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "gull",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/European_herring_gull_%28Larus_argentatus%29._Saint-Malo%2C_France.jpg/500px-European_herring_gull_%28Larus_argentatus%29._Saint-Malo%2C_France.jpg"
+  },
+  "kwal": {
+    "id": "kwal",
+    "name": "kwal",
+    "diet": "Carnivoor",
+    "meals": [
+      "plankton",
+      "garnaal"
+    ],
+    "description": "oeh eng",
+    "wiki": "jellyfish",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jelly_cc11.jpg/500px-Jelly_cc11.jpg"
+  },
+  "vis": {
+    "id": "vis",
+    "name": "vis",
+    "diet": "Omnivoor",
+    "description": "een zwemmend dier",
+    "meals": [
+      "plankton",
+      "deeltjes"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "fish"
+  },
+  "wratten zwijn": {
+    "id": "wratten zwijn",
+    "name": "wratten zwijn",
+    "diet": "Omnivoor",
+    "description": "zwijn vol met wratten",
+    "meals": [
+      "gras",
+      "groenten",
+      "fruit",
+      "sprinkhaan",
+      "boomschors"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "warthog"
+  },
+  "zebra": {
+    "id": "zebra",
+    "name": "zebra",
+    "diet": null,
+    "description": "gesstreepd paard",
+    "meals": [
+      "acacia_bladeren",
+      "gras",
+      "hooi"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": null
+  },
+  "buffel": {
+    "id": "buffel",
+    "name": "buffel",
+    "diet": "Herbivoor",
+    "description": "buffel",
+    "meals": [
+      "twijgen",
+      "gras"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "african buffalo"
+  },
+  "antilope": {
+    "id": "antilope",
+    "name": "Antilope",
+    "diet": "Herbivoor",
+    "description": "snel dier",
+    "meals": [
+      "gras"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": null
+  },
+  "zalm": {
+    "id": "zalm",
+    "name": "zalm",
+    "diet": "Carnivoor",
+    "description": "rivier vis",
+    "meals": [
+      "vis",
+      "garnaal",
+      "krill"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "salmon"
+  },
+  "plankton": {
+    "id": "plankton",
+    "name": "Zoöplankton",
+    "diet": "Carnivoor",
+    "description": "Zoöplankton is de verzameling van in water zwevende of drijvende heterotrofe organismen. Ze voeden zich niet door middel van fotosynthese, maar consumeren fytoplankton, andere zoöplanktonsoorten",
+    "meals": [
+      "fytoplankton"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Zooplankton"
+  },
+  "garnaal": {
+    "id": "garnaal",
+    "name": "garnaal",
+    "diet": "Carnivoor",
+    "meals": [
+      "plankton",
+      "deeltjes"
+    ],
+    "description": "Garnalen zijn een groep van kleine kreeftachtigen. Een groep met deze naam werd in 1852 voorgesteld door James Dwight Dana. Onder meer de gewone garnaal behoort tot deze groep",
+    "wiki": "shrimp"
+  },
+  "inktvis": {
+    "id": "inktvis",
+    "name": "inktvis",
+    "diet": "Carnivoor",
+    "description": "De inktvissen vormen een klasse dieren behorend tot de stam der weekdieren. De wetenschappelijke naam, Cephalopoda, is afgeleid van het Grieks en betekent letterlijk koppotigen. Deze naam is zo gekozen omdat de op armen gelijkende tentakels zich in een kring rond de mond van het dier bevinden.",
+    "meals": [
+      "vis",
+      "garnaal",
+      "krill",
+      "krab"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "squid"
+  },
+  "orca": {
+    "id": "orca",
+    "name": "orca",
+    "diet": "Carnivoor",
+    "description": "gigantich eng dier",
+    "meals": [
+      "vis",
+      "inktvis",
+      "zeehond",
+      "haai"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "orca"
+  },
+  "zee-schildpad": {
+    "id": "zee-schildpad",
+    "name": "zee schildpad",
+    "diet": "Omnivoor",
+    "description": "een cool dier",
+    "meals": [
+      "vis",
+      "kwal",
+      "krab",
+      "zee-wier"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "sea turtle"
+  },
+  "luipaard": {
+    "id": "luipaard",
+    "name": "luipaard",
+    "diet": "Carnivoor",
+    "description": "De luipaard, ook wel panter genoemd, is een roofdier uit de familie der katachtigen dat veel voorkomt in een groot deel van Afrika en Azië.",
+    "meals": [
+      "antilope",
+      "buffel"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "leopard"
+  },
+  "muntjak": {
+    "id": "muntjak",
+    "name": "muntjak",
+    "diet": "Omnivoor",
+    "description": "De Chinese muntjak, ook wel blafhert genoemd, is een kleine hertachtige behorende tot de muntjaks. De Chinese muntjak komt oorspronkelijk uit China",
+    "meals": [
+      "gras",
+      "bladeren",
+      "fruit",
+      "paddenstoelen"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "muntjac"
+  },
+  "makaken": {
+    "id": "makaken",
+    "name": "makaken",
+    "diet": "Omnivoor",
+    "description": "aapje",
+    "meals": [
+      "bladeren",
+      "fruit",
+      "sprinkhaan"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Makaken"
+  },
+  "gaur": {
+    "id": "gaur",
+    "name": "gaur",
+    "diet": "Herbivoor",
+    "meals": [
+      "gras",
+      "bladeren"
+    ],
+    "description": "",
+    "wiki": "Gaur"
+  },
+  "wild zwijn": {
+    "id": "wild zwijn",
+    "name": "wild zwijn",
+    "diet": "Omnivoor",
+    "description": "zwwijn maar wild",
+    "meals": [
+      "groenten",
+      "fruit"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Wild_boar"
+  },
+  "sprinkhaan": {
+    "id": "sprinkhaan",
+    "name": "sprinkhaan",
+    "diet": "Omnivoor",
+    "description": "",
+    "meals": [
+      "gras",
+      "bladeren",
+      "bladluizen"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "grasshopper"
+  },
+  "schaap": {
+    "id": "schaap",
+    "name": "schaap",
+    "diet": "Herbivoor",
+    "description": "",
+    "meals": [
+      "gras",
+      "hooi"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "sheep"
+  },
+  "duif": {
+    "id": "duif",
+    "name": "duif",
+    "diet": "Omnivoor",
+    "description": "vogel",
+    "meals": [
+      "vlieg",
+      "kapsalon",
+      "patat"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Feral pigeon"
+  },
+  "mossel": {
+    "id": "mossel",
+    "name": "mossel",
+    "diet": "Carnivoor",
+    "description": "schelpdier",
+    "meals": [
+      "plankton",
+      "fytoplankton"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": null
+  },
+  "fytoplankton": {
+    "id": "fytoplankton",
+    "name": "Fytoplankton",
+    "diet": "Fotoautotroof",
+    "meals": [
+      "zonlicht"
+    ],
+    "description": "Fytoplankton is plankton dat voor de energievoorziening afhankelijk is van fotosynthese. Hiertoe behoren zowel algen als sommige groepen bacteriën zoals blauwalgen. Fytoplankton is de grootste primaire producent van zuurstof op aarde.",
+    "wiki": "Phytoplankton"
+  },
+  "reusachtige-kokerworm": {
+    "id": "reusachtige-kokerworm",
+    "name": "Reusachtige kokerworm",
+    "diet": "Chemoautotroof",
+    "description": "De reusachtige kokerworm is een kokerworm die bekendstaat als extremofiel. Ze komen voornamelijk voor rondom vulkanische schoorstenen op grote diepte in de Grote Oceaan. Ze zijn ook gevonden in vulkanische grotten onder de hydrothermale bronnen, waar vooral de jonge wormen zich naar toe verplaatsen",
+    "meals": [
+      "symbiotische-bacteriën"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Riftia"
+  }
+}

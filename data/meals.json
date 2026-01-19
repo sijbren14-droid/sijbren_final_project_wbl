@@ -1,0 +1,433 @@
+{
+  "zebra": {
+    "id": "zebra",
+    "name": "Zebra",
+    "type": "vlees",
+    "description": "Een zebra is een veelvoorkomend prooidier voor grote roofdieren.",
+    "image": "zebravlees.jpg"
+  },
+  "antilope": {
+    "id": "antilope",
+    "name": "Antilope",
+    "type": "vlees",
+    "description": "Antilopen zijn snel maar worden vaak gevangen door leeuwen.",
+    "image": null,
+    "wiki": "Antilope"
+  },
+  "acacia_bladeren": {
+    "id": "acacia_bladeren",
+    "name": "Acacia bladeren",
+    "type": "plantaardig",
+    "description": "Voedzame bladeren van de acaciaboom.",
+    "image": null,
+    "wiki": "Acacia"
+  },
+  "twijgen": {
+    "id": "twijgen",
+    "name": "Twijgen",
+    "type": "plantaardig",
+    "description": "Jonge takken rijk aan vezels.",
+    "image": null,
+    "wiki": "branch"
+  },
+  "gras": {
+    "id": "gras",
+    "name": "Gras",
+    "type": "plantaardig",
+    "description": "Vers gras uit weilanden.",
+    "image": null,
+    "wiki": "grass"
+  },
+  "bladeren": {
+    "id": "bladeren",
+    "name": "Bladeren",
+    "type": "plantaardig",
+    "description": "Diverse bladeren van bomen en struiken.",
+    "image": null,
+    "wiki": "leaves"
+  },
+  "hooi": {
+    "id": "hooi",
+    "name": "Hooi",
+    "type": "plantaardig",
+    "description": "Gedroogd gras, rijk aan vezels.",
+    "image": null,
+    "wiki": "hay"
+  },
+  "groenten": {
+    "id": "groenten",
+    "name": "Groenten",
+    "type": "plantaardig",
+    "description": "Een mix van verschillende groenten.",
+    "image": null,
+    "wiki": "vegetable"
+  },
+  "fruit": {
+    "id": "fruit",
+    "name": "Fruit",
+    "type": "plantaardig",
+    "description": "Zoet en voedzaam fruit.",
+    "image": null,
+    "wiki": "fruit"
+  },
+  "vis": {
+    "id": "vis",
+    "name": "Vis",
+    "type": "vlees",
+    "description": "Rijk aan eiwitten en vetzuren.",
+    "image": null,
+    "wiki": "fish"
+  },
+  "bessen": {
+    "id": "bessen",
+    "name": "Bessen",
+    "type": "plantaardig",
+    "description": "Zoete bosbessen en andere vruchten.",
+    "image": null,
+    "wiki": "cherry"
+  },
+  "honing": {
+    "id": "honing",
+    "name": "Honing",
+    "type": "plantaardig",
+    "description": "Zoete substantie geproduceerd door bijen.",
+    "image": null,
+    "wiki": "honey"
+  },
+  "nectar": {
+    "id": "nectar",
+    "name": "Nectar",
+    "type": "plantaardig",
+    "description": "Suikerrijke vloeistof uit bloemen.",
+    "image": null,
+    "wiki": "nectar"
+  },
+  "pollen": {
+    "id": "pollen",
+    "name": "Stuifmeel",
+    "type": "plantaardig",
+    "description": "Stuifmeelkorrels rijk aan eiwitten.",
+    "image": null,
+    "wiki": "pollen"
+  },
+  "Bamboo": {
+    "id": "Bamboo",
+    "name": "Bamboo",
+    "type": "plantaardig",
+    "description": "Vezelrijk maar caloriarm voedsel met redelijke hoveelheden eiwitten",
+    "image": null,
+    "wiki": "bamboo"
+  },
+  "gnoes": {
+    "id": "gnoes",
+    "name": "gnoes",
+    "type": "vlees",
+    "description": "koe uit afrika",
+    "image": null,
+    "wiki": "gnu"
+  },
+  "plankton": {
+    "id": "plankton",
+    "name": "Zoöplankton",
+    "type": "vlees",
+    "description": "Zoöplankton is de verzameling van in water zwevende of drijvende heterotrofe organismen. Ze voeden zich niet door middel van fotosynthese, maar consumeren fytoplankton, andere zoöplanktonsoorten",
+    "image": null,
+    "wiki": "Zooplankton"
+  },
+  "zalm": {
+    "id": "zalm",
+    "name": "zalm",
+    "type": "vlees",
+    "description": "Zalm is een veelvoorkomende voedselvis die is geclassificeerd als een vette vis met een rijk gehalte aan eiwitten en omega-3-vetzuren",
+    "image": null,
+    "wiki": "salmon"
+  },
+  "mieren": {
+    "id": "mieren",
+    "name": "mieren",
+    "type": "vlees",
+    "description": "mieren worden door veel dieren gegegten",
+    "image": null,
+    "wiki": "formica rufa"
+  },
+  "termieten": {
+    "id": "termieten",
+    "name": "termieten",
+    "type": "vlees",
+    "description": "termieten worden door veel dieren gegegten",
+    "image": null,
+    "wiki": "termite"
+  },
+  "wild zwijn": {
+    "id": "wild zwijn",
+    "name": "wild zwijn",
+    "type": "vlees",
+    "description": "een zwijn maar wild",
+    "image": null,
+    "wiki": "boar"
+  },
+  "vlieg": {
+    "id": "vlieg",
+    "name": "vlieg",
+    "type": "vlees",
+    "description": "een vlieg is een vliegend beest",
+    "image": null,
+    "wiki": "fly"
+  },
+  "garnaal": {
+    "id": "garnaal",
+    "name": "garnaal",
+    "type": "vlees",
+    "description": "Garnalen zijn een groep van kleine kreeftachtigen. Een groep met deze naam werd in 1852 voorgesteld door James Dwight Dana.",
+    "image": null,
+    "wiki": "shrimp"
+  },
+  "portugees oorlogsschip": {
+    "id": "portugees oorlogsschip",
+    "name": "portugees oorlogsschip",
+    "type": "vlees",
+    "description": "De Glaucus atlanticus, ook wel de blauwe draak genoemd, haalt zijn gif door het eten van giftige neteldieren zoals het Portugees oorlogsschip (*Physalia physalis); hij slaat de krachtige gifcellen (nematocysten) op in speciale zakjes in zijn eigen veerachtige uitsteeksels, en gebruikt deze vervolgens als een super-geconcentreerd afweermiddel tegen roofdieren, waardoor hij zelf extreem giftig wordt,.",
+    "image": null,
+    "wiki": "Portuguese man o' war"
+  },
+  "hert": {
+    "id": "hert",
+    "name": "hert",
+    "type": "vlees",
+    "description": "een hert heeft een gewei",
+    "image": null,
+    "wiki": "Red deer"
+  },
+  "schaap": {
+    "id": "schaap",
+    "name": "schaap",
+    "type": "vlees",
+    "description": "schaap met wol",
+    "image": null,
+    "wiki": "sheep"
+  },
+  "kapsalon": {
+    "id": "kapsalon",
+    "name": "Kapsalon",
+    "type": "gemixt",
+    "description": "Lekkere bak kapsalon broeder",
+    "image": null,
+    "wiki": null
+  },
+  "muis": {
+    "id": "muis",
+    "name": "muis",
+    "type": "vlees",
+    "description": "muis, kleine muis",
+    "image": null,
+    "wiki": "mouse"
+  },
+  "kikker": {
+    "id": "kikker",
+    "name": "kikker",
+    "type": "vlees",
+    "description": "kikkertje voor de dorst",
+    "image": null,
+    "wiki": "frog"
+  },
+  "kastanje": {
+    "id": "kastanje",
+    "name": "kastanje",
+    "type": "plantaardig",
+    "description": "Hmmm lekkere kastanje",
+    "image": null,
+    "wiki": "chestnut"
+  },
+  "wortelen": {
+    "id": "wortelen",
+    "name": "wortelen",
+    "type": "plantaardig",
+    "description": "wortel",
+    "image": null,
+    "wiki": "carrot"
+  },
+  "sprinkhaan": {
+    "id": "sprinkhaan",
+    "name": "sprinkhaan",
+    "type": "vlees",
+    "description": "vlees",
+    "image": null,
+    "wiki": "grasshopper"
+  },
+  "wratten zwijn": {
+    "id": "wratten zwijn",
+    "name": "wratten zwijn",
+    "type": "vlees",
+    "description": "een zwijn mmar dan met wratten",
+    "image": null,
+    "wiki": "warthog"
+  },
+  "buffel": {
+    "id": "buffel",
+    "name": "buffel",
+    "type": "vlees",
+    "description": "buffel",
+    "image": null,
+    "wiki": "african buffalo"
+  },
+  "boomschors": {
+    "id": "boomschors",
+    "name": "boomschors",
+    "type": "plantaardig",
+    "description": "niet lekker",
+    "image": null,
+    "wiki": "tree bark"
+  },
+  "brokjes": {
+    "id": "brokjes",
+    "name": "brokjes",
+    "type": "gemixt",
+    "description": "Brokjes zijn kunstmatig voer",
+    "image": null,
+    "wiki": "None"
+  },
+  "kwal": {
+    "id": "kwal",
+    "name": "kwal",
+    "type": "vlees",
+    "description": "glibberig maar ook stekend",
+    "image": null,
+    "wiki": "jellyfish"
+  },
+  "deeltjes": {
+    "id": "deeltjes",
+    "name": "Zeesneeuw",
+    "type": "vlees",
+    "description": "Zeesneeuw (marine snow) is een constante, langzame stroom van organisch materiaal – dode planten en dieren, uitwerpselen, slijm, en andere deeltjes – die van het wateroppervlak naar de diepzee dwarrelt, als een soort \"sneeuw\" in de oceaan",
+    "image": null,
+    "wiki": "marine snow"
+  },
+  "krill": {
+    "id": "krill",
+    "name": "krill",
+    "type": "vlees",
+    "description": "klein schaaldier",
+    "image": null,
+    "wiki": "krill"
+  },
+  "zonlicht": {
+    "id": "zonlicht",
+    "name": "zonlicht",
+    "type": "chemisch",
+    "description": "De zon (een ster) basis van al het leven op aarde",
+    "image": null,
+    "wiki": "sun light"
+  },
+  "krab": {
+    "id": "krab",
+    "name": "krab",
+    "type": "vlees",
+    "description": "zee insect",
+    "image": null,
+    "wiki": "crab"
+  },
+  "inktvis": {
+    "id": "inktvis",
+    "name": "inktvis",
+    "type": "vlees",
+    "description": "Tentacel dier",
+    "image": null,
+    "wiki": "squid"
+  },
+  "zeehond": {
+    "id": "zeehond",
+    "name": "zeehond",
+    "type": "vlees",
+    "description": "beetje als een hond maar dan in de zee",
+    "image": null,
+    "wiki": "Bearded seal"
+  },
+  "zee-wier": {
+    "id": "zee-wier",
+    "name": "zee wier",
+    "type": "plantaardig",
+    "description": "zeewier",
+    "image": null,
+    "wiki": "zeewier"
+  },
+  "haai": {
+    "id": "haai",
+    "name": "haai",
+    "type": "vlees",
+    "description": "haai",
+    "image": null,
+    "wiki": "Carcharhiniformes"
+  },
+  "giraffe": {
+    "id": "giraffe",
+    "name": "giraffe",
+    "type": "vlees",
+    "description": "De giraffen zijn een geslacht van evenhoevige zoogdieren waarvan de vertegenwoordigers voorkomen in Afrika. Ze zijn bekend om hun lange nek en het vlekkenpatroon op hun vacht. Giraffen zijn de grootste herkauwende zoogdieren op aarde.",
+    "image": null,
+    "wiki": "giraffe"
+  },
+  "muntjak": {
+    "id": "muntjak",
+    "name": "muntjak",
+    "type": "vlees",
+    "description": "De Chinese muntjak, ook wel blafhert genoemd, is een kleine hertachtige behorende tot de muntjaks. De Chinese muntjak komt oorspronkelijk uit China",
+    "image": null,
+    "wiki": "muntjac"
+  },
+  "makaken": {
+    "id": "makaken",
+    "name": "makaken",
+    "type": "vlees",
+    "description": "De makaken vormen een geslacht van zoogdieren uit de familie apen van de Oude Wereld.",
+    "image": null,
+    "wiki": "macaques"
+  },
+  "gaur": {
+    "id": "gaur",
+    "name": "gaur",
+    "type": "vlees",
+    "description": "De grootste natuurlijke vijanden van de gaur zijn tijgers, die volwassen dieren kunnen doden",
+    "image": null,
+    "wiki": "Gaur"
+  },
+  "paddenstoelen": {
+    "id": "paddenstoelen",
+    "name": "paddenstoelen",
+    "type": "chemisch",
+    "description": "",
+    "image": null,
+    "wiki": "mushroom"
+  },
+  "bladluizen": {
+    "id": "bladluizen",
+    "name": "bladluizen",
+    "type": "vlees",
+    "description": "",
+    "image": null,
+    "wiki": null
+  },
+  "patat": {
+    "id": "patat",
+    "name": "patat",
+    "type": "plantaardig",
+    "description": "",
+    "image": null,
+    "wiki": null
+  },
+  "fytoplankton": {
+    "id": "fytoplankton",
+    "name": "Fytoplankton",
+    "type": "vlees",
+    "description": "Fytoplankton is plankton dat voor de energievoorziening afhankelijk is van fotosynthese. Hiertoe behoren zowel algen als sommige groepen bacteriën zoals blauwalgen. Fytoplankton is de grootste primaire producent van zuurstof op aarde.",
+    "image": null,
+    "wiki": "Phytoplankton"
+  },
+  "symbiotische-bacteriën": {
+    "id": "symbiotische-bacteriën",
+    "name": "Symbiotische Bacteriën",
+    "type": "symbiotisch",
+    "description": "De Reusachtige kokerworm eet niet zelf; hij leeft in symbiose met bacteriën die in zijn lichaam leven en die voedingsstoffen uit giftige stoffen, zoals waterstofsulfide, omzetten in voedsel voor de worm, in een proces genaamd chemosynthese, zonder mond of maag",
+    "image": null,
+    "wiki": "bacteria"
+  }
+}
