@@ -272,7 +272,7 @@
     "id": "hond",
     "name": "hond",
     "diet": "Carnivoor",
-    "description": "hond is een een huisdier die achter een sok aan rend",
+    "description": "hond is een een huisdier die achter een stok aan rend",
     "meals": [
       "brokjes"
     ],
@@ -598,5 +598,17 @@
     "approved": false,
     "image": null,
     "wiki": "Riftia"
+  },
+  "symiotiche-bacterien": {
+    "id": "symiotiche-bacterien",
+    "name": "symiotiche bacterien",
+    "diet": null,
+    "description": "deze bacterien werken samen met de koker worm",
+    "meals": [
+      "thermal-vents"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "bacteria"
   }
 }
