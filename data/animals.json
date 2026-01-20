@@ -324,7 +324,7 @@
     "id": "wratten zwijn",
     "name": "wratten zwijn",
     "diet": "Omnivoor",
-    "description": "zwijn vol met wratten",
+    "description": "zwijn ui afrika",
     "meals": [
       "gras",
       "groenten",
@@ -340,7 +340,7 @@
     "id": "zebra",
     "name": "zebra",
     "diet": null,
-    "description": "gesstreepd paard",
+    "description": "gesstreepde ezel",
     "meals": [
       "acacia_bladeren",
       "gras",
