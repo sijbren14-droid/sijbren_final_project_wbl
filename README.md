@@ -79,7 +79,6 @@ Beheer & beveiliging
 De applicatie bevat een admin panel voor het beheren van dieren en gerechten. Om misbruik te voorkomen is er input-validatie, normalisatie van namen en rate limiting toegepast op inzend-routes. Hierdoor fungeert de frontend als eerste filter, terwijl de backend de definitieve controle uitvoert.
 
 
-
 # Installatie
 
 Het onderstaande stappenplan zorgt ervoor dat de applicatie lokaal kan worden uitgevoerd.
@@ -117,6 +116,7 @@ Start de applicatie: python app.py
 
 
 De applicatie draait nu op: http://127.0.0.1:5000
+
 
 # Bekende beperkingen
 - Voor de voedsel keten renderen sommige verbindings lijnen niet als deze boven de pagina laden
