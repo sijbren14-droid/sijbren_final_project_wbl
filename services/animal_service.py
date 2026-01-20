@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import requests
+import random
 
 ANIMALS_PATH = Path(__file__).parent.parent / "data" / "animals.json"
 MEALS_PATH = Path(__file__).parent.parent / "data" / "meals.json"
@@ -70,7 +71,6 @@ def get_random_animal_with_meals():
     animals = load_animals()
     meals = load_meals()
 
-    import random
     animal = random.choice(list(animals.values()))
 
     animal["meals"] = [meals[meal_id] for meal_id in animal["meals"]]
