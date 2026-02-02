@@ -285,7 +285,7 @@
     "type": "gemixt",
     "description": "Brokjes zijn kunstmatig voer",
     "image": null,
-    "wiki": "None"
+    "wiki": "dog food"
   },
   "kwal": {
     "id": "kwal",
@@ -349,7 +349,7 @@
     "type": "plantaardig",
     "description": "zeewier",
     "image": null,
-    "wiki": "zeewier"
+    "wiki": "Seaweed"
   },
   "haai": {
     "id": "haai",
@@ -405,7 +405,7 @@
     "type": "vlees",
     "description": "",
     "image": null,
-    "wiki": null
+    "wiki": "aphid"
   },
   "patat": {
     "id": "patat",
@@ -413,7 +413,15 @@
     "type": "plantaardig",
     "description": "",
     "image": null,
-    "wiki": null
+    "wiki": "french fries"
+  },
+  "kruimels": {
+    "id": "kruimels",
+    "name": "kruimels",
+    "type": "plantaardig",
+    "description": "kuimels van een broodje",
+    "image": null,
+    "wiki": "Bread#Crust_and_crumb"
   },
   "fytoplankton": {
     "id": "fytoplankton",
@@ -431,12 +439,20 @@
     "image": null,
     "wiki": "bacteria"
   },
-  "thermal-vents": {
-    "id": "thermal-vents",
+  "thermal vents": {
+    "id": "thermal vents",
     "name": "thermal vents",
     "type": "Chemisch",
     "description": "de thermal vents op de bodem van de ocean",
     "image": null,
-    "wiki": null
+    "wiki": "Hydrothermal vent"
+  },
+  "meeuw": {
+    "id": "meeuw",
+    "name": "meeuw",
+    "type": "vlees",
+    "description": "Meeuwen zijn een familie van zeevogels uit de orde van de steltloperachtigen. Het zijn over het algemeen middelgrote tot vrij grote vogels, meestal grijs of wit, vaak met zwarte tekeningen op kop en snavel. Ze hebben een typische schelle, krijsende roep, wat 'kliauwen' wordt genoemd.",
+    "image": null,
+    "wiki": "sea gull"
   }
 }

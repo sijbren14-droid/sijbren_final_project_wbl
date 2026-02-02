@@ -172,8 +172,8 @@ def build_food_tree(root_id, animals, meals):
 # -------------------------------------------------
 # FOOD WEB – LAYOUT ENGINE (PROCEDURAL)
 # -------------------------------------------------
-START_X = 400
-START_Y = 600
+START_X = 1000
+START_Y = 1000
 
 H_SPACING = 600
 V_SPACING = 170

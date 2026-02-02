@@ -852,7 +852,7 @@ body.landing {
 .food-web-canvas {
     position: relative;
     width: 3000px;            /* groot veld */
-    height: 2000px;
+    height: 3000px;
     background: #fafafa;
     overflow: hidden;         /* belangrijk voor drag */
     cursor: grab;

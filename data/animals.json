@@ -285,7 +285,7 @@
     "id": "meeuw",
     "name": "meeuw",
     "diet": "Omnivoor",
-    "description": "irritant beest",
+    "description": "Meeuwen zijn een familie van zeevogels uit de orde van de steltloperachtigen. Het zijn over het algemeen middelgrote tot vrij grote vogels, meestal grijs of wit, vaak met zwarte tekeningen op kop en snavel. Ze hebben een typische schelle, krijsende roep, wat 'kliauwen' wordt genoemd.",
     "meals": [
       "garnaal",
       "kwal"
@@ -497,7 +497,7 @@
     ],
     "approved": false,
     "image": null,
-    "wiki": "Makaken"
+    "wiki": "Macaque"
   },
   "gaur": {
     "id": "gaur",
@@ -557,7 +557,7 @@
     "description": "vogel",
     "meals": [
       "vlieg",
-      "kapsalon",
+      "kruimels",
       "patat"
     ],
     "approved": false,
@@ -575,7 +575,7 @@
     ],
     "approved": false,
     "image": null,
-    "wiki": null
+    "wiki": "Mussel"
   },
   "fytoplankton": {
     "id": "fytoplankton",
@@ -599,16 +599,31 @@
     "image": null,
     "wiki": "Riftia"
   },
-  "symiotiche-bacterien": {
-    "id": "symiotiche-bacterien",
-    "name": "symiotiche bacterien",
+  "symbiotische-bacteriën": {
+    "id": "symbiotische-bacteriën",
+    "name": "Symbiotische Bacteriën",
     "diet": null,
     "description": "deze bacterien werken samen met de koker worm",
     "meals": [
-      "thermal-vents"
+      "thermal vents"
     ],
     "approved": false,
     "image": null,
     "wiki": "bacteria"
+  },
+  "zeehond": {
+    "id": "zeehond",
+    "name": "zeehond",
+    "diet": "Carnivoor",
+    "description": "Zeehonden of robben vormen een familie van zeezoogdieren. Ze behoren tot de roofdieren. Zo'n 90% van de ruwweg 11.000 zeehonden van Nederland is in de Waddenzee te vinden; verder zijn er populaties in onder andere de Ooster- en Westerschelde. In België worden ze, door het strakke verloop van de kust",
+    "meals": [
+      "vis",
+      "krab",
+      "inktvis",
+      "meeuw"
+    ],
+    "approved": false,
+    "image": null,
+    "wiki": "Bearded seal"
   }
 }

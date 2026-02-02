@@ -133,7 +133,7 @@ function fitToScreen() {
     const scaleX = canvasRect.width / stageRect.width;
     const scaleY = canvasRect.height / stageRect.height;
 
-    return Math.min(scaleX, scaleY, 1);
+    return Math.min(scaleX, scaleY, 0.5);
 }
 
 window.addEventListener("load", () => {
