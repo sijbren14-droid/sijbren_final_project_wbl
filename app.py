@@ -381,7 +381,7 @@ def submit_animal():
 # ------------------
 # ADMIN
 # ------------------
-@app.route("/admin")
+@app.route("/admin_user_1553")
 def admin():
     pending_animals = load_json(PENDING_ANIMALS_PATH)
     pending_meals = load_json(PENDING_MEALS_PATH)
