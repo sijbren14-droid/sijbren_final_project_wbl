@@ -410,7 +410,7 @@ def approve_animal(animal_id):
         save_json(ANIMALS_PATH, animals)
         save_json(PENDING_ANIMALS_PATH, pending)
 
-    return redirect("/admin")
+    return redirect("/admin_user_1553")
 
 
 @app.route("/reject-animal/<animal_id>")
@@ -426,7 +426,7 @@ def reject_animal_existing(animal_id):
     animals = load_json(ANIMALS_PATH)
     animals.pop(animal_id, None)
     save_json(ANIMALS_PATH, animals)
-    return redirect("/admin")
+    return redirect("/admin_user_1553")
 
 
 # ------------------
@@ -442,7 +442,7 @@ def approve_meal(meal_id):
         save_json(MEALS_PATH, meals)
         save_json(PENDING_MEALS_PATH, pending)
 
-    return redirect("/admin")
+    return redirect("/admin_user_1553")
 
 
 @app.route("/reject-meal/<meal_id>")
@@ -450,7 +450,7 @@ def reject_meal(meal_id):
     pending = load_json(PENDING_MEALS_PATH)
     pending.pop(meal_id, None)
     save_json(PENDING_MEALS_PATH, pending)
-    return redirect("/admin")
+    return redirect("/admin_user_1553")
 
 
 # ------------------
@@ -482,7 +482,7 @@ def edit_animal(animal_id):
             animal["image"] = filename
 
         save_json(ANIMALS_PATH, animals)
-        return redirect("/admin")
+        return redirect("/admin_user_1553")
 
     animal["image_url"] = get_animal_image(animal)
 
@@ -521,7 +521,7 @@ def edit_meal(meal_id):
             meal["image"] = filename
 
         save_json(MEALS_PATH, meals)
-        return redirect("/admin")
+        return redirect("/admin_user_1553")
 
     meal["image_url"] = get_meal_image(meal)
 
@@ -545,7 +545,7 @@ def admin_add_animal():
             "meals": request.form.getlist("meals"),
         }
         save_json(ANIMALS_PATH, animals)
-        return redirect("/admin")
+        return redirect("/admin_user_1553")
 
     return render_template(
         "admin_add_animal.html",
@@ -570,7 +570,7 @@ def admin_add_meal():
             "image": None,
         }
         save_json(MEALS_PATH, meals)
-        return redirect("/admin")
+        return redirect("/admin_user_1553")
 
     return render_template("admin_add_meal.html")
 
